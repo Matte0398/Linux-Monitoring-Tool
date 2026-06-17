@@ -28,38 +28,38 @@ proc=process_name[,alternative_name]:alias=label:user=username:ppid=parent_pid:m
 Monitor a single process:
 
 ``` bash
-  ./process_monitor.sh -P "proc=nginx"
+./process_monitor.sh -P "proc=nginx"
 ```
 
 Monitor multiple processes:
 
 ``` bash
-  ./process_monitor.sh -P "proc=syslogd,rsyslogd,syslog-ng:alias=syslog"
+./process_monitor.sh -P "proc=syslogd,rsyslogd,syslog-ng:alias=syslog"
 ```
 
 Monitor a process and define a custom alias and owner:
 
 ``` bash
-  ./process_monitor.sh -P "proc=mysql:alias=database:user=mysql"
+./process_monitor.sh -P "proc=mysql:alias=database:user=mysql"
 ```
 
 Monitor multiple process definitions and return output in JSON format:
 
 ``` bash
-  ./process_monitor.sh -P "proc=nginx%proc=mysql:alias=database:user=mysql" -J
+./process_monitor.sh -P "proc=nginx%proc=mysql:alias=database:user=mysql" -J
 ```
 
 Load process definitions from a file:
 
 ``` bash
-  ./process_monitor.sh -F /tmp/processes.txt
+./process_monitor.sh -F /tmp/processes.txt
 
-    File content:
+  File content:
 
-     proc=nginx
-     proc=mysql:alias=database
-     proc=mysql:alias=database:user=mysql
-     proc=syslogd,rsyslogd,syslog-ng:alias=syslog
+   proc=nginx
+   proc=mysql:alias=database
+   proc=mysql:alias=database:user=mysql
+   proc=syslogd,rsyslogd,syslog-ng:alias=syslog
 ```
 
 ### Output
